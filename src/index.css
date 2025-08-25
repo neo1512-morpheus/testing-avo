@@ -1,0 +1,272 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS Reset - Remove all default margins and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 100%;
+}
+
+/* Performance optimizations */
+* {
+  box-sizing: border-box;
+}
+
+/* Optimize image rendering */
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Loading animations */
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.loading-shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Show navigation buttons in mobile view */
+@media (max-width: 768px) {
+  .mobile-nav-buttons {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    overflow-x: auto;
+    -ms-overflow-style: none;  /* Hide scrollbar in IE and Edge */
+    scrollbar-width: none;  /* Hide scrollbar in Firefox */
+  }
+  
+  /* Hide scrollbar in Chrome, Safari and Opera */
+  .mobile-nav-buttons::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .mobile-nav-buttons button {
+    color: white;
+    text-decoration: none;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.2s;
+    white-space: nowrap;
+    background: transparent;
+    border: none;
+  }
+  
+  .mobile-nav-buttons button:hover {
+    background-color: rgba(34, 197, 94, 0.2);
+  }
+}
+
+/* Apply background to entire website - body and html */
+html, body {
+  background-image: linear-gradient(rgba(10, 10, 10, 0.65), rgba(10, 10, 10, 0.65)), url('https://oyc9u5lfcg.ufs.sh/f/lRAiGHfLmtpEpYzbDMSmV2SIraKe0WUujA76wYsQtqB31Dkx') !important;
+  background-attachment: fixed !important;
+  background-size: contain !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-color: #1a1a1a !important;
+  min-height: 100vh !important;
+}
+
+/* Optimize background image loading */
+.main-background-container {
+  will-change: transform;
+  transform: translateZ(0);
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background: transparent; /* Let body handle the background */
+}
+
+/* Set dark fallback background to prevent flash */
+body {
+  background-color: #1a1a1a; /* Match the header color */
+  padding-top: 0px; /* No padding - header at absolute top */
+  margin: 0 !important; /* Remove any default margins */
+  min-height: 100vh;
+}
+
+/* Ensure all sections are transparent to show main background */
+#hero-section,
+.content-section,
+section {
+  background: transparent !important;
+  background-image: none !important;
+}
+
+/* Move hero section down to account for fixed header */
+#hero-section {
+  padding-top: 60px !important; /* Add padding to hero section instead of body */
+  margin-top: 0 !important; /* Remove any top margin */
+}
+
+/* Desktop styles - keep unchanged */
+@media (min-width: 769px) {
+  html, body {
+    background-size: contain !important; /* Show full image on desktop */
+  }
+  
+  .content-section {
+    background: transparent;
+  }
+  
+  /*
+   * DESKTOP BUTTON ALIGNMENT FIX
+   * Center the Order Now button horizontally on desktop displays only
+   */
+  .order-now-button-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  
+  body {
+    padding-top: 80px; /* Account for larger header on desktop */
+  }
+}
+
+/* Mobile-only styles - full-page parallax background */
+@media (max-width: 768px) {
+  html, body {
+    background-size: contain !important; /* Show full image on mobile */
+    background-attachment: fixed !important; /* Creates the parallax effect */
+  }
+  
+  body {
+    background-color: #1a1a1a; /* Consistent dark fallback for mobile */
+    padding-top: 0px; /* Account for mobile header */
+  }
+  
+  /* Make all content sections transparent to show the main background */
+  #hero-section,
+  .content-section {
+    background: transparent !important;
+    background-image: none !important;
+  }
+  
+  /*
+   * FINAL MOBILE HERO LAYOUT FIX
+   * This enforces a clean, vertical stacking order for all hero elements using Flexbox
+   */
+  .hero-content-wrapper {
+    display: flex;
+    
+    /* This is the key fix: It forces all child elements into a vertical column */
+    flex-direction: column;
+    
+    /* This horizontally centers all the items in the column */
+    align-items: center;
+    
+    /* This creates a consistent vertical space BETWEEN each element in the stack */
+    gap: 24px; /* Adjust this value for more or less space */
+    
+    /* Ensures the text within the elements is also centered */
+    text-align: center;
+  }
+
+  /*
+   * Safeguard to prevent conflicts.
+   * Remove any individual top/bottom margins from the elements, as the 'gap' property now handles the spacing.
+   */
+  .info-cards-container,
+  .main-headline-container,
+  .sub-headline-paragraph,
+  .order-now-button-wrapper {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+  
+  /* Mobile info cards container - separated cards layout */
+  .info-cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  /* Mobile ordering animation easter egg */
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+
+  /* 
+  * FLOATING INFO CARDS 
+  * Makes info cards visually float for a modern look
+  */
+  .info-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    background-color: rgba(10, 10, 10, 0.6);
+    backdrop-filter: blur(10px);
+    transform: translateZ(0);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /*
+   * HERO TYPOGRAPHY SIZING AND SPACING
+   * Ensures that the hero text content has proper mobile sizing
+   */
+  .main-headline {
+    font-size: 2.5rem !important;
+    line-height: 1.2 !important;
+    margin-top: 0;
+    padding: 0 16px;
+    text-align: center;
+  }
+
+  .sub-headline {
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+    padding: 0 16px;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  /*
+   * VERTICAL SPACING OPTIMIZATION
+   * Properly spaces vertical sections for mobile layout
+   */
+  section {
+    padding: 48px 0 !important;
+  }
+
+  h2 {
+    margin-bottom: 24px !important;
+  }
+
+  /*
+   * MOBILE CTA BUTTON STYLING
+   * Makes the call-to-action button more prominent on mobile
+   */
+  .primary-cta {
+    width: 100% !important;
+    padding: 12px 16px !important;
+    font-size: 1rem !important;
+  }
+}
