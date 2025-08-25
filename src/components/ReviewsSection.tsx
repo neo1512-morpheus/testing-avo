@@ -9,42 +9,42 @@ const ReviewsSection: React.FC = () => {
 
   const reviews = [
     {
-      rating: 4.8,
+      rating: 5.0,
       text: "Just tried the Avocado Sandwich and Pasta Salad... I'm honestly impressed! Refreshing, filling, doesn't feel heavy. Bread stayed crisp even after delivery!",
       author: "Priya S.",
       location: "Rajkot",
       avatar: "https://images.unsplash.com/photo-1601412436009-d964bd02edbc?w=250&h=250&auto=format&fit=crop&faces=1"
     },
     {
-      rating: 4.9,
+      rating: 4.5,
       text: "This is the best freaking Avocado toast in the whole wide city. No fancy restaurant can beat the taste!",
       author: "Rahul M.",
       location: "Rajkot",
       avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face"
     },
     {
-      rating: 4.7,
+      rating: 4.0,
       text: "Wow. This is so delicious. Every bite was delicious! Like Salad, Sandwich... 😋😋💖",
       author: "Sneha P.",
       location: "Rajkot",
       avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face"
     },
     {
-      rating: 4.6,
+      rating: 4.5,
       text: "Exotic, very healthy and very tasty all avocado dishes 🥪🤤",
       author: "Amit K.",
       location: "Rajkot",
       avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face"
     },
     {
-      rating: 4.8,
+      rating: 5.0,
       text: "Tried their avocado wrap for lunch today and it was super fresh and filling. Didn't feel oily at all!",
       author: "Kavya R.",
       location: "Rajkot",
       avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop&crop=face"
     },
     {
-      rating: 4.9,
+      rating: 4.0,
       text: "Ordered the pasta salad and smoothie. Packaging was neat, nothing spilled. Delivery was fast too.",
       author: "Rohan J.",
       location: "Rajkot",
@@ -54,7 +54,7 @@ const ReviewsSection: React.FC = () => {
 
   const stats = [
     { icon: Users, value: "5000+", label: "Happy Customers" },
-    { icon: Star, value: "4.8★", label: "Average Rating" },
+    { icon: Star, value: "4.5★", label: "Average Rating" },
     { icon: TrendingUp, value: "500+", label: "Reviews" },
     { icon: Award, value: "Featured", label: "Swiggy & Zomato" }
   ];
@@ -104,18 +104,58 @@ const ReviewsSection: React.FC = () => {
   };
 
   const renderStars = (rating: number) => {
-    return Array.from({ length: 5 }, (_, i) => (
-      <Star
-        key={i}
-        className={`w-5 h-5 ${
-          i < Math.floor(rating) 
-            ? 'text-yellow-400 fill-current' 
-            : i < rating 
-            ? 'text-yellow-400 fill-current opacity-50' 
-            : 'text-gray-300'
-        }`}
-      />
-    ));
+    const isPerfectFive = rating === 5.0;
+    
+    return Array.from({ length: 5 }, (_, i) => {
+      let starType = 'empty';
+      if (i < Math.floor(rating)) {
+        starType = 'full';
+      } else if (i < rating) {
+        starType = 'half';
+      }
+
+      const baseClasses = 'w-5 h-5 transition-all duration-300';
+      let starClasses = '';
+      let starStyles = {};
+
+      if (starType === 'full') {
+        if (isPerfectFive) {
+          // Glowing effect for 5-star reviews
+          starClasses = `${baseClasses} text-yellow-300 fill-current`;
+          starStyles = {
+            filter: 'drop-shadow(0 0 8px rgba(255, 215, 0, 0.6))'
+          };
+        } else {
+          // Regular full star
+          starClasses = `${baseClasses} text-yellow-400 fill-current`;
+        }
+      } else if (starType === 'half') {
+        // Half star - we'll use a custom approach
+        starClasses = `${baseClasses} text-yellow-400 fill-current opacity-50`;
+      } else {
+        // Empty star
+        starClasses = `${baseClasses} text-gray-300`;
+      }
+
+      return (
+        <div key={i} className="relative">
+          {starType === 'half' ? (
+            // Custom half-star implementation
+            <div className="relative">
+              <Star className={`${baseClasses} text-gray-300`} />
+              <div 
+                className="absolute inset-0 overflow-hidden"
+                style={{ width: '50%' }}
+              >
+                <Star className={`${baseClasses} text-yellow-400 fill-current`} />
+              </div>
+            </div>
+          ) : (
+            <Star className={starClasses} style={starStyles} />
+          )}
+        </div>
+      );
+    });
   };
 
   return (
