@@ -270,3 +270,26 @@ section {
     font-size: 1rem !important;
   }
 }
+
+/* Modal Specific Styles */
+#order-modal {
+  z-index: 99999 !important;
+}
+
+#order-modal.flex {
+  display: flex !important;
+}
+
+#order-modal.hidden {
+  display: none !important;
+}
+
+/* Shimmer animation for modal headline */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}

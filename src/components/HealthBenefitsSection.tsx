@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Heart, Shield, Leaf, Zap, Brain, Droplets } from 'lucide-react';
+import { openOrderModal } from '../lib/utils';
 
 const HealthBenefitsSection: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -63,13 +64,7 @@ const HealthBenefitsSection: React.FC = () => {
     }
   ];
 
-  const openOrderModal = () => {
-    const modal = document.getElementById('order-modal');
-    if (modal) {
-      modal.classList.remove('hidden');
-      modal.classList.add('flex');
-    }
-  };
+  // Using the global openOrderModal function from utils
 
   return (
     <section 

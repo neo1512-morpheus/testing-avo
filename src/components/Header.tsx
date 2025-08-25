@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ShoppingCart, Truck, MapPin } from 'lucide-react';
 import { imageUrls } from '../lib/imageUtils';
+import { openOrderModal } from '../lib/utils';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,13 +24,7 @@ const Header: React.FC = () => {
     setIsMenuOpen(false);
   };
 
-  const openOrderModal = () => {
-    const modal = document.getElementById('order-modal');
-    if (modal) {
-      modal.classList.remove('hidden');
-      modal.classList.add('flex');
-    }
-  };
+  // Using the global openOrderModal function from utils
 
   return (
     <header 

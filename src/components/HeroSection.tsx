@@ -1,17 +1,12 @@
 import React, { useEffect, useRef } from 'react';
 import { OrderNowButton } from './ui/order-now-button';
 import { Leaf, Heart } from 'lucide-react';
+import { openOrderModal } from '../lib/utils';
 
 const HeroSection: React.FC = () => {
   const particlesRef = useRef<HTMLCanvasElement>(null);
 
-  const openOrderModal = () => {
-    const modal = document.getElementById('order-modal');
-    if (modal) {
-      modal.classList.remove('hidden');
-      modal.classList.add('flex');
-    }
-  };
+  // Using the global openOrderModal function from utils
 
   // Particle animation effect
   useEffect(() => {

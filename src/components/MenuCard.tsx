@@ -1,5 +1,6 @@
 import React from 'react';
 import OptimizedImage from './ui/OptimizedImage';
+import { openOrderModal } from '../lib/utils';
 
 interface MenuCardProps {
   image: string;
@@ -9,13 +10,7 @@ interface MenuCardProps {
 }
 
 const MenuCard: React.FC<MenuCardProps> = ({ image, title, description, className = '' }) => {
-  const openOrderModal = () => {
-    const modal = document.getElementById('order-modal');
-    if (modal) {
-      modal.classList.remove('hidden');
-      modal.classList.add('flex');
-    }
-  };
+  // Using the global openOrderModal function from utils
 
   return (
     <div className={`bg-white rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 overflow-hidden flex flex-col h-full ${className}`}>

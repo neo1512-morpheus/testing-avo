@@ -11,10 +11,9 @@ const Footer: React.FC = () => {
 
   return (
     <footer 
-      className="border-t border-gray-600 border-opacity-30"
       style={{
-        background: 'linear-gradient(135deg, rgba(45, 55, 72, 0.95) 0%, rgba(26, 32, 44, 0.98) 50%, rgba(16, 20, 28, 0.99) 100%)',
-        backdropFilter: 'blur(8px)'
+        background: 'transparent',
+        borderTop: '1px solid rgba(255, 255, 255, 0.1)'
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -235,10 +234,9 @@ const Footer: React.FC = () => {
       
       {/* Bottom Copyright Bar */}
       <div 
-        className="border-t border-gray-600 border-opacity-30"
         style={{
-          background: 'rgba(16, 20, 28, 0.8)',
-          backdropFilter: 'blur(4px)'
+          background: 'transparent',
+          borderTop: '1px solid rgba(255, 255, 255, 0.1)'
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">

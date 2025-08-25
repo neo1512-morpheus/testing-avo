@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import ReviewsSection from './components/ReviewsSection';
@@ -31,10 +31,14 @@ function App() {
     // Preload your reliable background image
     const bgImg = new Image();
     bgImg.src = imageUrls.backgrounds[0];
+    
+    // Modal is now managed via React state, no DOM manipulation needed
   }, []);
 
   return (
     <div className="font-poppins min-h-screen relative main-background-container">
+
+      
       {/* Header */}
       <Header />
       
