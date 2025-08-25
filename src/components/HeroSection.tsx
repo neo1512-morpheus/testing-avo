@@ -152,7 +152,16 @@ const HeroSection: React.FC = () => {
       </div>
 
       {/* Main Content - Mobile and Desktop */}
-      <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto w-full hero-content-wrapper">
+      <div 
+        className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto w-full hero-content-wrapper"
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '100%'
+        }}
+      >
         
         {/* Mobile Info Cards - Separated with floating animations */}
         <div className="lg:hidden info-cards-container">
@@ -181,7 +190,7 @@ const HeroSection: React.FC = () => {
 
         {/* Main Headline */}
         <div className="main-headline-container">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight animate-fade-in-up">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight animate-fade-in-up">
             <span 
               className="block"
               style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)' }}
@@ -215,29 +224,67 @@ const HeroSection: React.FC = () => {
         {/* Sub-headline */}
         <div className="sub-headline-paragraph">
           <p 
-            className="text-xl md:text-2xl lg:text-3xl font-light max-w-3xl mx-auto animate-fade-in-up opacity-0" 
+            className="text-lg md:text-xl lg:text-2xl font-light max-w-3xl mx-auto animate-fade-in-up opacity-0" 
             style={{ 
               animationDelay: '0.3s', 
               animationFillMode: 'forwards',
-              textShadow: '2px 2px 5px rgba(0, 0, 0, 0.9)'
+              textShadow: '2px 2px 5px rgba(0, 0, 0, 0.9)',
+              lineHeight: '1.6'
             }}
           >
-            The Avocado Table offers a <span className="text-forest-400 font-medium">vibrant menu</span> of healthy and delicious dishes, all centered around the <span className="text-forest-400 font-medium">superfood you love</span>.
+            Experience our <span className="text-forest-400 font-medium">vibrant menu</span> of healthy dishes, all centered around the <span className="text-forest-400 font-medium">superfood you love</span>.
           </p>
           <div 
-            className="flex flex-wrap justify-center items-center gap-4 mt-6 text-lg animate-fade-in-up opacity-0"
+            className="flex flex-wrap justify-center items-center gap-4 mt-6 animate-fade-in-up opacity-0"
             style={{ 
               animationDelay: '0.5s', 
-              animationFillMode: 'forwards',
-              textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)'
+              animationFillMode: 'forwards'
             }}
           >
-            <span className="text-forest-400 font-semibold">✓ Made fresh daily</span>
-            <span className="text-forest-400 font-semibold">✓ Limited quantities</span>
-            <span className="text-forest-400 font-semibold">✓ As seen on Swiggy & Zomato</span>
+            {/* Trust Badge 1: Made Fresh Daily */}
+            <div 
+              className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-white"
+              style={{
+                background: 'rgba(20, 20, 20, 0.7)',
+                border: '1px solid rgba(52, 211, 153, 0.4)',
+                boxShadow: '0 0 15px rgba(52, 211, 153, 0.2)',
+                backdropFilter: 'blur(8px)'
+              }}
+            >
+              <span className="text-forest-400">✓</span>
+              <span>Made Fresh Daily</span>
+            </div>
+            
+            {/* Trust Badge 2: Limited Quantities */}
+            <div 
+              className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-white"
+              style={{
+                background: 'rgba(20, 20, 20, 0.7)',
+                border: '1px solid rgba(52, 211, 153, 0.4)',
+                boxShadow: '0 0 15px rgba(52, 211, 153, 0.2)',
+                backdropFilter: 'blur(8px)'
+              }}
+            >
+              <span className="text-forest-400">⚡</span>
+              <span>Limited Quantities</span>
+            </div>
+            
+            {/* Trust Badge 3: On Swiggy & Zomato */}
+            <div 
+              className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-white"
+              style={{
+                background: 'rgba(20, 20, 20, 0.7)',
+                border: '1px solid rgba(52, 211, 153, 0.4)',
+                boxShadow: '0 0 15px rgba(52, 211, 153, 0.2)',
+                backdropFilter: 'blur(8px)'
+              }}
+            >
+              <span className="text-forest-400">🛵</span>
+              <span>On Swiggy & Zomato</span>
+            </div>
           </div>
           <p 
-            className="text-orange-400 font-bold text-lg mt-4 animate-fade-in-up opacity-0"
+            className="text-orange-400 font-bold text-base mt-6 animate-fade-in-up opacity-0"
             style={{ 
               animationDelay: '0.7s', 
               animationFillMode: 'forwards',
@@ -250,7 +297,7 @@ const HeroSection: React.FC = () => {
         
         {/* Order Now Button */}
         <div 
-          className="order-now-button-wrapper animate-fade-in-up opacity-0"
+          className="order-now-button-wrapper animate-fade-in-up opacity-0 mt-4"
           style={{ animationDelay: '0.9s', animationFillMode: 'forwards' }}
         >
           <OrderNowButton 

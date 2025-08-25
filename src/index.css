@@ -98,6 +98,36 @@ html, body {
   background: transparent; /* Let body handle the background */
 }
 
+/* Menu Grid Optimization */
+.menu-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+  .menu-grid-container {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1100px;
+  }
+}
+
+@media (max-width: 1023px) and (min-width: 768px) {
+  .menu-grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 900px;
+  }
+}
+
+@media (max-width: 767px) {
+  .menu-grid-container {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+}
+
 /* Set dark fallback background to prevent flash */
 body {
   background-color: #1a1a1a; /* Match the header color */

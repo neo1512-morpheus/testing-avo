@@ -36,17 +36,17 @@ const MenuCard: React.FC<MenuCardProps> = ({ image, title, description, classNam
         />
       </div>
       
-      <div className="p-6 flex flex-col flex-grow">
-        <h3 className="text-xl md:text-2xl font-semibold text-gray-800 mb-3">
+      <div className="p-5 flex flex-col flex-grow">
+        <h3 className="text-lg md:text-xl font-semibold text-gray-800 mb-3">
           {title}
         </h3>
         
-        <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-6 flex-grow">
+        <p className="text-gray-600 text-sm leading-relaxed mb-5 flex-grow">
           {description}
         </p>
         
         {/* Health badges */}
-        <div className="flex flex-wrap gap-2 mb-4">
+        <div className="flex flex-wrap gap-2 mb-3">
           <span className="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded-full">
             Heart Healthy
           </span>
@@ -60,7 +60,7 @@ const MenuCard: React.FC<MenuCardProps> = ({ image, title, description, classNam
         
         <button 
           onClick={openOrderModal}
-          className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 mt-auto transform hover:scale-105 shadow-lg hover:shadow-xl"
+          className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold py-2.5 px-5 rounded-lg transition-all duration-300 mt-auto transform hover:scale-105 shadow-lg hover:shadow-xl"
         >
           Order This Fresh
         </button>

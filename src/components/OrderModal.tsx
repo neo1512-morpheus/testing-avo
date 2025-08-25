@@ -212,9 +212,17 @@ const OrderModal: React.FC = () => {
             >
               {/* Swiggy Logo */}
               <img 
-                src="https://cdn.brandfetch.io/ideeTxiKQK/theme/light/symbol.svg?c=1dxbfHSJFAPEGdCLU4o5B" 
+                src="https://cdn.brandfetch.io/ideeTxiKQK/theme/dark/symbol.svg" 
                 alt="Swiggy" 
-                style={{ width: '32px', height: '32px' }}
+                style={{ 
+                  width: '24px', 
+                  height: '24px', 
+                  objectFit: 'contain', 
+                  minWidth: '24px',
+                  maxWidth: '24px',
+                  maxHeight: '24px',
+                  flexShrink: 0
+                }}
               />
               <span style={{ 
                 flex: 1,
@@ -258,9 +266,17 @@ const OrderModal: React.FC = () => {
             >
               {/* Zomato Logo */}
               <img 
-                src="https://cdn.brandfetch.io/idEql8nEWn/w/800/h/800/theme/light/symbol.png?c=1dxbfHSJFAPEGdCLU4o5B" 
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Zomato_logo.png/960px-Zomato_logo.png?20210726145438" 
                 alt="Zomato" 
-                style={{ width: '32px', height: '32px' }}
+                style={{ 
+                  width: '24px', 
+                  height: '24px', 
+                  objectFit: 'contain', 
+                  minWidth: '24px',
+                  maxWidth: '24px',
+                  maxHeight: '24px',
+                  flexShrink: 0
+                }}
               />
               <span style={{ 
                 flex: 1,
