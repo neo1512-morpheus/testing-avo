@@ -251,19 +251,23 @@ const HeroSection: React.FC = () => {
               >
                 YOUR DAILY DOSE OF
               </span>
-              <span 
-                className="block neon-text mb-1"
-                style={{
-                  color: '#34D399',
-                  fontWeight: '900',
-                  letterSpacing: '0em',
-textShadow: `2px 2px 4px rgba(0, 0, 0, 0.8)`,
-
-transition: 'all 0.3s ease',
-':hover': { opacity: 0.8 }                }}
-              >
-                AVOCADO
-              </span>
+             <span 
+  className="block neon-text mb-1"
+  style={{
+    background: 'linear-gradient(45deg, #10B981, #34D399, #6EE7B7)',
+    backgroundSize: '200% 200%',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    backgroundClip: 'text',
+    fontWeight: '900',
+    letterSpacing: '0.05em',
+    textShadow: '0 0 20px rgba(52, 211, 153, 0.3)',
+    animation: 'gradientShift 3s ease infinite, scaleIn 0.8s ease-out',
+    transform: 'scale(1.05)'
+  }}
+>
+  AVOCADO
+</span>
               <span 
                 className="block"
                 style={{ 
