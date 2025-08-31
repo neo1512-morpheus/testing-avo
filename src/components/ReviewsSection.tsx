@@ -184,12 +184,12 @@ const ReviewsSection: React.FC = () => {
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-          {stats.map((stat, index) => (
-            <div 
-              key={index}
-              className="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-4 text-center border border-white border-opacity-20 hover:bg-opacity-20 transition-all duration-300"
-            >
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+  {stats.map((stat, index) => (
+    <div 
+      key={index}
+      className="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-3 text-center border border-white border-opacity-20 hover:bg-opacity-20 transition-all duration-300"
+    >
               <stat.icon className="w-6 h-6 text-forest-400 mx-auto mb-2" />
               <div 
                 className="text-lg md:text-xl font-bold text-white mb-1"
