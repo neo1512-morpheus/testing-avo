@@ -80,7 +80,10 @@ const HeroSection: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden w-full">
+      <section 
+    id="hero-section" 
+    className="relative h-screen flex items-center justify-center w-full"
+  >
       {/* Animated Particles Background */}
       <canvas
         ref={particlesRef}
@@ -89,12 +92,12 @@ const HeroSection: React.FC = () => {
       />
 
       {/* Floating Info Cards - Desktop Only */}
-      <div className="absolute inset-0 pointer-events-none z-5 hidden lg:block">
+      <div className="absolute inset-0 pointer-events-none z-20 hidden lg:block">
         {/* Left Card - Always Fresh */}
         <div 
           className="floating-card-left absolute left-4 md:left-8 lg:left-16 top-1/2 transform -translate-y-1/2"
           style={{
-            background: 'rgba(10, 10, 10, 0.4)',
+            background: 'rgba(10, 10, 10, 0.6)',
             backdropFilter: 'blur(8px)',
             border: '1px solid rgba(255, 255, 255, 0.1)',
             borderRadius: '16px',
@@ -124,7 +127,7 @@ const HeroSection: React.FC = () => {
         <div 
           className="floating-card-right absolute right-4 md:right-8 lg:right-16 top-1/2 transform -translate-y-1/2"
           style={{
-            background: 'rgba(10, 10, 10, 0.4)',
+            background: 'rgba(10, 10, 10, 0.6)',
             backdropFilter: 'blur(8px)',
             border: '1px solid rgba(255, 255, 255, 0.1)',
             borderRadius: '16px',
@@ -153,13 +156,14 @@ const HeroSection: React.FC = () => {
 
       {/* Main Content - Mobile and Desktop */}
       <div 
-        className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto w-full hero-content-wrapper"
+        className="relative z-20 text-center text-white px-4 max-w-4xl mx-auto w-full hero-content-wrapper"
         style={{
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'center',
+          justifyContent: 'flex-start',
           alignItems: 'center',
-          height: '100%'
+          height: '100%',
+          paddingTop: '0.5rem' /* pull content further up */
         }}
       >
         
@@ -210,13 +214,13 @@ const HeroSection: React.FC = () => {
                 animation: 'neon-pulse 2s ease-in-out infinite alternate'
               }}
             >
-              DELICIOUSLY
+              AVOCADO
             </span>
             <span 
               className="block"
               style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)' }}
             >
-              FRESH
+              PERFECTION
             </span>
           </h1>
         </div>

@@ -66,7 +66,7 @@ const DifferenceSection: React.FC = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="py-16 md:py-24 w-full">
+    <section ref={sectionRef} className="py-12 md:py-16 w-full compact-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 md:mb-16">
           <h2 
@@ -77,17 +77,17 @@ const DifferenceSection: React.FC = () => {
           </h2>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 compact-grid-gap">
           {features.map((feature, index) => (
             <div 
               key={index}
-              className="difference-item opacity-0 text-center bg-white bg-opacity-95 p-8 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-104 hover:shadow-[0_0_25px_rgba(52,211,153,0.5)] md:hover:scale-104 md:hover:shadow-[0_0_25px_rgba(52,211,153,0.5)]"
+              className="difference-item opacity-0 text-center bg-white bg-opacity-95 p-6 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-104 hover:shadow-[0_0_25px_rgba(52,211,153,0.5)] md:hover:scale-104 md:hover:shadow-[0_0_25px_rgba(52,211,153,0.5)]"
             >
-              <div className="text-forest-500 mb-6 flex justify-center">
+              <div className="text-forest-500 mb-4 flex justify-center">
                 {feature.icon}
               </div>
               
-              <h3 className="text-xl md:text-2xl font-semibold text-gray-800 mb-4">
+              <h3 className="text-xl md:text-2xl font-semibold text-gray-800 mb-3">
                 {feature.title}
               </h3>
               

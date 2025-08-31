@@ -69,7 +69,7 @@ const HealthBenefitsSection: React.FC = () => {
   return (
     <section 
       ref={sectionRef}
-      className={`py-16 md:py-24 w-full transition-all duration-1000 ${
+      className={`py-12 md:py-16 w-full compact-section transition-all duration-1000 ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}
     >
@@ -92,11 +92,11 @@ const HealthBenefitsSection: React.FC = () => {
         </div>
 
         {/* Benefits Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10 compact-grid-gap">
           {benefits.map((benefit, index) => (
             <div 
               key={index}
-              className="bg-white bg-opacity-95 rounded-2xl p-8 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-center group"
+              className="bg-white bg-opacity-95 rounded-2xl p-6 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-center group"
               style={{
                 animationDelay: `${index * 100}ms`
               }}
@@ -118,7 +118,7 @@ const HealthBenefitsSection: React.FC = () => {
 
         {/* Call to Action */}
         <div className="text-center">
-          <div className="bg-gradient-to-r from-forest-500 to-forest-600 rounded-3xl p-8 md:p-12 shadow-2xl">
+          <div className="bg-gradient-to-r from-forest-500 to-forest-600 rounded-3xl p-6 md:p-8 shadow-2xl">
             <h3 
               className="text-2xl md:text-3xl font-bold text-white mb-4"
               style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)' }}

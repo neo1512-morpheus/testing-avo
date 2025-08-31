@@ -36,16 +36,15 @@ function App() {
   }, []);
 
   return (
-    <div className="font-poppins min-h-screen relative main-background-container">
-
+    <div className="font-poppins min-h-screen relative">
+      {/* Global Fixed Background - Single Canvas */}
+      <div className="global-fixed-background"></div>
       
       {/* Header */}
       <Header />
       
-      {/* Hero Section */}
-      <div id="hero-section">
-        <HeroSection />
-      </div>
+      {/* Hero Section (no extra wrapper id to avoid conflicts) */}
+      <HeroSection />
 
       {/* Reviews Section */}
       <div id="reviews-section" className="content-section">

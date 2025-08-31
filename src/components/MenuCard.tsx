@@ -13,20 +13,20 @@ const MenuCard: React.FC<MenuCardProps> = ({ image, title, description, classNam
   // Using the global openOrderModal function from utils
 
   return (
-    <div className={`bg-white rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 overflow-hidden flex flex-col h-full ${className}`}>
-      <div className="aspect-w-16 aspect-h-12 overflow-hidden flex-shrink-0">
+    <div className={`bg-white rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 overflow-hidden flex flex-col h-full compact-card ${className}`}>
+      <div className="overflow-hidden flex-shrink-0">
         <OptimizedImage
           src={image}
           alt={title}
-          className="w-full h-64 object-cover"
+          className="w-full menu-card-image"
           loading="lazy"
           placeholder={
-            <div className="w-full h-64 bg-gray-200 animate-pulse flex items-center justify-center">
+            <div className="w-full menu-card-image bg-gray-200 animate-pulse flex items-center justify-center">
               <div className="text-gray-400">Loading...</div>
             </div>
           }
           errorPlaceholder={
-            <div className="w-full h-64 bg-gray-100 flex items-center justify-center">
+            <div className="w-full menu-card-image bg-gray-100 flex items-center justify-center">
               <div className="text-gray-500 text-center">
                 <div className="text-2xl mb-2">🍽️</div>
                 <div className="text-sm">Image unavailable</div>
@@ -36,12 +36,12 @@ const MenuCard: React.FC<MenuCardProps> = ({ image, title, description, classNam
         />
       </div>
       
-      <div className="p-5 flex flex-col flex-grow">
-        <h3 className="text-lg md:text-xl font-semibold text-gray-800 mb-3">
+      <div className="px-4 pt-4 pb-3 flex flex-col flex-grow">
+        <h3 className="text-lg md:text-xl font-semibold text-gray-800 mb-2">
           {title}
         </h3>
         
-        <p className="text-gray-600 text-sm leading-relaxed mb-5 flex-grow">
+        <p className="text-gray-600 text-sm leading-relaxed mb-4 flex-grow line-clamp-4">
           {description}
         </p>
         
@@ -60,7 +60,7 @@ const MenuCard: React.FC<MenuCardProps> = ({ image, title, description, classNam
         
         <button 
           onClick={openOrderModal}
-          className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold py-2.5 px-5 rounded-lg transition-all duration-300 mt-auto transform hover:scale-105 shadow-lg hover:shadow-xl"
+          className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold py-2 px-4 rounded-lg transition-all duration-300 mt-auto transform hover:scale-105 shadow-lg hover:shadow-xl"
         >
           Order This Fresh
         </button>

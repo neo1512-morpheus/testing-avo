@@ -79,15 +79,56 @@ img {
   }
 }
 
-/* Apply background to entire website - body and html */
+/* Apply two-layer background to entire website */
 html, body {
-  background-image: linear-gradient(rgba(10, 10, 10, 0.65), rgba(10, 10, 10, 0.65)), url('https://oyc9u5lfcg.ufs.sh/f/lRAiGHfLmtpEpYzbDMSmV2SIraKe0WUujA76wYsQtqB31Dkx') !important;
-  background-attachment: fixed !important;
-  background-size: contain !important;
-  background-position: center center !important;
-  background-repeat: no-repeat !important;
-  background-color: #1a1a1a !important;
+  background-color: transparent !important;
   min-height: 100vh !important;
+  margin: 0;
+  padding: 0;
+}
+
+/* Global Fixed Background - Single Canvas Architecture */
+.global-fixed-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0; /* above body background, below content */
+  pointer-events: none;
+}
+
+/* Back layer: Blurred full-screen background that fills edges */
+.global-fixed-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://oyc9u5lfcg.ufs.sh/f/lRAiGHfLmtpEpYzbDMSmV2SIraKe0WUujA76wYsQtqB31Dkx');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  filter: blur(8px);
+  z-index: -2;
+}
+
+/* Front layer: Clear contain-scaled image showing full salad bowl */
+.global-fixed-background::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(10, 10, 10, 0.65), rgba(10, 10, 10, 0.65)), url('https://oyc9u5lfcg.ufs.sh/f/lRAiGHfLmtpEpYzbDMSmV2SIraKe0WUujA76wYsQtqB31Dkx');
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: -1;
 }
 
 /* Optimize background image loading */
@@ -130,36 +171,132 @@ html, body {
   }
 }
 
-/* Set dark fallback background to prevent flash */
+/* Ensure transparent body so global background is visible */
 body {
-  background-color: #1a1a1a; /* Match the header color */
+  background-color: transparent !important;
   padding-top: 0px; /* No padding - header at absolute top */
   margin: 0 !important; /* Remove any default margins */
   min-height: 100vh;
 }
 
-/* Ensure all sections are transparent to show main background */
+/* Hero section uses global background */
+#hero-section {
+  background: transparent !important;
+  background-image: none !important;
+  background-color: transparent !important;
+  padding-top: 80px !important; /* Keep original padding */
+  margin-top: 0 !important;
+}
+
+/* Hero section two-layer background system - same as global */
+#hero-section::before {}
+#hero-section::after {}
+
+/* Remove any thin gap between hero and reviews by overlapping slightly */
+#hero-section { margin-bottom: -2px; }
+#reviews-section { margin-top: 0; border-top: none !important; }
+
+/* Ensure header appears above background with no borders */
+header {
+  position: relative;
+  z-index: 50;
+  border: none !important;
+  box-shadow: none !important;
+  border-bottom: none !important;
+}
+
+/* ONLY fix the header background - simple targeted solution */
+header {
+  background: transparent !important;
+}
+
+nav {
+  background: transparent !important;
+}
+
+/* Override common Tailwind background utilities if applied to header */
+.bg-black, .bg-gray-900, .bg-slate-900 {
+  background-color: transparent !important;
+  background: transparent !important;
+}
+
+/* Remove visible borders/separators between sections only */
+section {
+  border-top: none !important;
+  border-bottom: none !important;
+}
+
+/* Hide any divider elements */
+hr {
+  display: none !important;
+}
+
+/* Ensure section-like containers have no borders */
+.section, [class*="section"] {
+  border: none !important;
+}
+
+/* Make content sections transparent for single-canvas effect */
 #hero-section,
 .content-section,
 section {
   background: transparent !important;
   background-image: none !important;
+  position: relative;
+  z-index: 1;
 }
 
-/* Move hero section down to account for fixed header */
-#hero-section {
-  padding-top: 60px !important; /* Add padding to hero section instead of body */
-  margin-top: 0 !important; /* Remove any top margin */
+/* Header blur handled conditionally in component */
+header {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
-/* Desktop styles - keep unchanged */
+/* Hero section now uses global background - no individual background needed */
+
+/* Ensure smooth transitions between sections */
+section {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Utilities for compact layouts (desktop focus) */
+.compact-section {
+  padding-top: 48px !important;
+  padding-bottom: 56px !important;
+}
+
+.compact-grid-gap {
+  gap: 16px !important;
+}
+
+.compact-card {
+  padding: 16px !important;
+}
+
+.menu-card-image {
+  height: 190px !important;
+  object-fit: cover !important;
+}
+
+.line-clamp-2, .line-clamp-3, .line-clamp-4 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.line-clamp-2 { -webkit-line-clamp: 2; }
+.line-clamp-3 { -webkit-line-clamp: 3; }
+.line-clamp-4 { -webkit-line-clamp: 4; }
+
+/* Desktop styles - Global background system */
 @media (min-width: 769px) {
-  html, body {
-    background-size: contain !important; /* Show full image on desktop */
+  /* Back layer: Blurred full-screen background for desktop */
+  .global-fixed-background::before {
+    background-size: cover;
   }
   
-  .content-section {
-    background: transparent;
+  /* Front layer: Clear contain-scaled image for desktop */
+  .global-fixed-background::after {
+    background-size: contain;
   }
   
   /*
@@ -172,20 +309,32 @@ section {
   }
   
   body {
-    padding-top: 80px; /* Account for larger header on desktop */
+    padding-top: 0px; /* Leave space control to hero section only */
   }
 }
 
-/* Mobile-only styles - full-page parallax background */
+/* Mobile-only styles - Global background system */
 @media (max-width: 768px) {
-  html, body {
-    background-size: contain !important; /* Show full image on mobile */
-    background-attachment: fixed !important; /* Creates the parallax effect */
+  /* Back layer: Blurred full-screen background for mobile */
+  .global-fixed-background::before {
+    background-size: cover;
+    background-attachment: fixed; /* Creates the parallax effect */
+  }
+  
+  /* Front layer: Clear contain-scaled image for mobile */
+  .global-fixed-background::after {
+    background-size: contain;
+    background-attachment: fixed; /* Creates the parallax effect */
   }
   
   body {
-    background-color: #1a1a1a; /* Consistent dark fallback for mobile */
+    background-color: transparent !important; /* Consistent with desktop */
     padding-top: 0px; /* Account for mobile header */
+  }
+  
+  /* Mobile hero section positioning */
+  #hero-section {
+    padding-top: 24px !important; /* Smaller padding for mobile */
   }
   
   /* Make all content sections transparent to show the main background */
@@ -209,7 +358,7 @@ section {
     align-items: center;
     
     /* This creates a consistent vertical space BETWEEN each element in the stack */
-    gap: 24px; /* Adjust this value for more or less space */
+    gap: 16px; /* Reduced gap for more compact layout */
     
     /* Ensures the text within the elements is also centered */
     text-align: center;

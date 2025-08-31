@@ -46,7 +46,7 @@ const AboutSection: React.FC = () => {
               <img 
                 src="https://oyc9u5lfcg.ufs.sh/f/lRAiGHfLmtpEKLyHPPTxLMDIAT2lF91Zb3n4vp6BJteiEVSX"
                 alt="The Avocado Table Logo"
-                className="w-64 md:w-80 lg:w-96 h-auto"
+                className="w-56 md:w-72 lg:w-80 h-auto"
                 style={{ clipPath: 'inset(2px 0 0 0)' }}
               />
             </div>

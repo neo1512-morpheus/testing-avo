@@ -72,7 +72,7 @@ const MenuSection: React.FC = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="py-16 md:py-24 w-full">
+    <section ref={sectionRef} className="py-12 md:py-16 w-full compact-section">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 md:mb-16">
           <h2 
@@ -83,7 +83,7 @@ const MenuSection: React.FC = () => {
           </h2>
         </div>
         
-        <div className="menu-grid-container">
+        <div className="menu-grid-container compact-grid-gap">
           {menuItems.map((item, index) => (
             <div key={index} className="relative">
               {item.popular && (

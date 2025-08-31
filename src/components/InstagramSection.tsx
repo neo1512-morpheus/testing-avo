@@ -97,11 +97,8 @@ const InstagramSection: React.FC = () => {
         
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {instagramPosts.map((post, index) => (
-            <a
+            <div
               key={index}
-              href="https://www.instagram.com/_the_avocado_table/"
-              target="_blank"
-              rel="noopener noreferrer"
               className="instagram-gallery-image aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300 block relative"
             >
               {/* Loading skeleton */}
@@ -131,7 +128,7 @@ const InstagramSection: React.FC = () => {
                 onLoad={() => handleImageLoad(index)}
                 loading="lazy"
               />
-            </a>
+            </div>
           ))}
         </div>
         
