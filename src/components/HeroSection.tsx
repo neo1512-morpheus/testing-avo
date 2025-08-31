@@ -200,15 +200,15 @@ className="floating-card-right absolute right-8 md:right-12 lg:right-20 top-1/2 
 
         {/* Main Content - Mobile and Desktop */}
         <div 
-          className="relative z-20 text-center text-white px-4 max-w-4xl mx-auto w-full hero-content-wrapper"
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'flex-start',
-            alignItems: 'center',
-            height: '100%',
-            paddingTop: '4rem' /* pull content further up */
-          }}
+         className="relative z-20 text-center text-white px-4 max-w-4xl mx-auto w-full hero-content-wrapper"
+style={{
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'center',
+  height: '100%',
+  transform: 'translateY(-10%)'
+}}
         >
           
           {/* Mobile Info Cards - Separated with floating animations */}
