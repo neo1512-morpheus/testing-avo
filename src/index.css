@@ -144,30 +144,30 @@ html, body {
 /* Menu Grid Optimization */
 .menu-grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1.5rem;
-  max-width: 1200px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
 @media (min-width: 1024px) {
   .menu-grid-container {
     grid-template-columns: repeat(3, 1fr);
-    max-width: 1100px;
+    max-width: 900px;
   }
 }
 
 @media (max-width: 1023px) and (min-width: 768px) {
   .menu-grid-container {
     grid-template-columns: repeat(2, 1fr);
-    max-width: 900px;
+    max-width: 700px;
   }
 }
 
 @media (max-width: 767px) {
   .menu-grid-container {
     grid-template-columns: 1fr;
-    max-width: 400px;
+    max-width: 320px;
   }
 }
 
@@ -184,7 +184,7 @@ body {
   background: transparent !important;
   background-image: none !important;
   background-color: transparent !important;
-  padding-top: 80px !important; /* Keep original padding */
+  padding-top: 60px !important; /* Reduced padding */
   margin-top: 0 !important;
 }
 
@@ -261,20 +261,20 @@ section {
 
 /* Utilities for compact layouts (desktop focus) */
 .compact-section {
-  padding-top: 48px !important;
-  padding-bottom: 56px !important;
+  padding-top: 32px !important;
+  padding-bottom: 40px !important;
 }
 
 .compact-grid-gap {
-  gap: 16px !important;
+  gap: 12px !important;
 }
 
 .compact-card {
-  padding: 16px !important;
+  padding: 12px !important;
 }
 
 .menu-card-image {
-  height: 190px !important;
+  height: 140px !important;
   object-fit: cover !important;
 }
 
@@ -334,7 +334,7 @@ section {
   
   /* Mobile hero section positioning */
   #hero-section {
-    padding-top: 24px !important; /* Smaller padding for mobile */
+    padding-top: 16px !important; /* Even smaller padding for mobile */
   }
   
   /* Make all content sections transparent to show the main background */
@@ -358,7 +358,7 @@ section {
     align-items: center;
     
     /* This creates a consistent vertical space BETWEEN each element in the stack */
-    gap: 16px; /* Reduced gap for more compact layout */
+    gap: 12px; /* Further reduced gap for more compact layout */
     
     /* Ensures the text within the elements is also centered */
     text-align: center;
@@ -382,7 +382,7 @@ section {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 12px;
   }
 
   /* Mobile ordering animation easter egg */
@@ -399,9 +399,9 @@ section {
   .info-card {
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 12px 16px;
-    border-radius: 12px;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 10px;
     background-color: rgba(10, 10, 10, 0.6);
     backdrop-filter: blur(10px);
     transform: translateZ(0);
@@ -414,17 +414,17 @@ section {
    * Ensures that the hero text content has proper mobile sizing
    */
   .main-headline {
-    font-size: 2.5rem !important;
+    font-size: 1.8rem !important;
     line-height: 1.2 !important;
     margin-top: 0;
-    padding: 0 16px;
+    padding: 0 12px;
     text-align: center;
   }
 
   .sub-headline {
-    font-size: 1rem !important;
+    font-size: 0.9rem !important;
     line-height: 1.5 !important;
-    padding: 0 16px;
+    padding: 0 12px;
     max-width: 100%;
     text-align: center;
   }
@@ -434,11 +434,11 @@ section {
    * Properly spaces vertical sections for mobile layout
    */
   section {
-    padding: 48px 0 !important;
+    padding: 32px 0 !important;
   }
 
   h2 {
-    margin-bottom: 24px !important;
+    margin-bottom: 16px !important;
   }
 
   /*
@@ -447,8 +447,8 @@ section {
    */
   .primary-cta {
     width: 100% !important;
-    padding: 12px 16px !important;
-    font-size: 1rem !important;
+    padding: 10px 12px !important;
+    font-size: 0.9rem !important;
   }
 }
 

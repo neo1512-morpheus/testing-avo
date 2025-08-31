@@ -95,28 +95,28 @@ const HeroSection: React.FC = () => {
       <div className="absolute inset-0 pointer-events-none z-20 hidden lg:block">
         {/* Left Card - Always Fresh */}
         <div 
-          className="floating-card-left absolute left-4 md:left-8 lg:left-16 top-1/2 transform -translate-y-1/2"
+          className="floating-card-left absolute left-4 md:left-6 lg:left-12 top-1/2 transform -translate-y-1/2"
           style={{
             background: 'rgba(10, 10, 10, 0.6)',
             backdropFilter: 'blur(8px)',
             border: '1px solid rgba(255, 255, 255, 0.1)',
-            borderRadius: '16px',
-            padding: '20px',
+            borderRadius: '12px',
+            padding: '16px',
             boxShadow: '0 0 20px rgba(52, 211, 153, 0.2)',
             animation: 'float 6s ease-in-out infinite'
           }}
         >
-          <div className="flex items-center space-x-3 mb-2">
-            <Leaf className="w-6 h-6 text-forest-400" />
+          <div className="flex items-center space-x-2 mb-2">
+            <Leaf className="w-5 h-5 text-forest-400" />
             <h3 
-              className="text-white font-bold text-lg"
+              className="text-white font-bold text-sm"
               style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)' }}
             >
               ALWAYS FRESH
             </h3>
           </div>
           <p 
-            className="text-gray-300 text-sm max-w-48"
+            className="text-gray-300 text-xs max-w-40"
             style={{ textShadow: '1px 1px 2px rgba(0, 0, 0, 0.8)' }}
           >
             Made-to-order with locally sourced ingredients.
@@ -125,28 +125,28 @@ const HeroSection: React.FC = () => {
 
         {/* Right Card - Nutrient Packed */}
         <div 
-          className="floating-card-right absolute right-4 md:right-8 lg:right-16 top-1/2 transform -translate-y-1/2"
+          className="floating-card-right absolute right-4 md:right-6 lg:right-12 top-1/2 transform -translate-y-1/2"
           style={{
             background: 'rgba(10, 10, 10, 0.6)',
             backdropFilter: 'blur(8px)',
             border: '1px solid rgba(255, 255, 255, 0.1)',
-            borderRadius: '16px',
-            padding: '20px',
+            borderRadius: '12px',
+            padding: '16px',
             boxShadow: '0 0 20px rgba(52, 211, 153, 0.2)',
             animation: 'float 6s ease-in-out infinite 3s'
           }}
         >
-          <div className="flex items-center space-x-3 mb-2">
-            <Heart className="w-6 h-6 text-forest-400" />
+          <div className="flex items-center space-x-2 mb-2">
+            <Heart className="w-5 h-5 text-forest-400" />
             <h3 
-              className="text-white font-bold text-lg"
+              className="text-white font-bold text-sm"
               style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)' }}
             >
               NUTRIENT-PACKED
             </h3>
           </div>
           <p 
-            className="text-gray-300 text-sm max-w-48"
+            className="text-gray-300 text-xs max-w-40"
             style={{ textShadow: '1px 1px 2px rgba(0, 0, 0, 0.8)' }}
           >
             Rich in healthy fats, vitamins, and clean energy.
@@ -194,7 +194,7 @@ const HeroSection: React.FC = () => {
 
         {/* Main Headline */}
         <div className="main-headline-container">
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight animate-fade-in-up">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 leading-tight animate-fade-in-up">
             <span 
               className="block"
               style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)' }}
@@ -228,7 +228,7 @@ const HeroSection: React.FC = () => {
         {/* Sub-headline */}
         <div className="sub-headline-paragraph">
           <p 
-            className="text-lg md:text-xl lg:text-2xl font-light max-w-3xl mx-auto animate-fade-in-up opacity-0" 
+            className="text-base md:text-lg lg:text-xl font-light max-w-2xl mx-auto animate-fade-in-up opacity-0" 
             style={{ 
               animationDelay: '0.3s', 
               animationFillMode: 'forwards',
@@ -239,7 +239,7 @@ const HeroSection: React.FC = () => {
             Experience our <span className="text-forest-400 font-medium">vibrant menu</span> of healthy dishes, all centered around the <span className="text-forest-400 font-medium">superfood you love</span>.
           </p>
           <div 
-            className="flex flex-wrap justify-center items-center gap-4 mt-6 animate-fade-in-up opacity-0"
+            className="flex flex-wrap justify-center items-center gap-3 mt-4 animate-fade-in-up opacity-0"
             style={{ 
               animationDelay: '0.5s', 
               animationFillMode: 'forwards'
@@ -247,7 +247,7 @@ const HeroSection: React.FC = () => {
           >
             {/* Trust Badge 1: Made Fresh Daily */}
             <div 
-              className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-white"
+              className="flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold text-white"
               style={{
                 background: 'rgba(20, 20, 20, 0.7)',
                 border: '1px solid rgba(52, 211, 153, 0.4)',
@@ -261,7 +261,7 @@ const HeroSection: React.FC = () => {
             
             {/* Trust Badge 2: Limited Quantities */}
             <div 
-              className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-white"
+              className="flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold text-white"
               style={{
                 background: 'rgba(20, 20, 20, 0.7)',
                 border: '1px solid rgba(52, 211, 153, 0.4)',
@@ -275,7 +275,7 @@ const HeroSection: React.FC = () => {
             
             {/* Trust Badge 3: On Swiggy & Zomato */}
             <div 
-              className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-white"
+              className="flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold text-white"
               style={{
                 background: 'rgba(20, 20, 20, 0.7)',
                 border: '1px solid rgba(52, 211, 153, 0.4)',
@@ -288,7 +288,7 @@ const HeroSection: React.FC = () => {
             </div>
           </div>
           <p 
-            className="text-orange-400 font-bold text-base mt-6 animate-fade-in-up opacity-0"
+            className="text-orange-400 font-bold text-sm mt-4 animate-fade-in-up opacity-0"
             style={{ 
               animationDelay: '0.7s', 
               animationFillMode: 'forwards',
@@ -301,12 +301,12 @@ const HeroSection: React.FC = () => {
         
         {/* Order Now Button */}
         <div 
-          className="order-now-button-wrapper animate-fade-in-up opacity-0 mt-4"
+          className="order-now-button-wrapper animate-fade-in-up opacity-0 mt-3"
           style={{ animationDelay: '0.9s', animationFillMode: 'forwards' }}
         >
           <OrderNowButton 
             onClick={openOrderModal}
-            className="shadow-2xl text-lg md:text-xl px-8 md:px-12 py-4 md:py-5 hover:shadow-[0_0_30px_rgba(52,211,153,0.5)] transition-all duration-300"
+            className="shadow-2xl text-sm md:text-base px-6 md:px-8 py-3 md:py-3 hover:shadow-[0_0_30px_rgba(52,211,153,0.5)] transition-all duration-300"
             shimmerColor="#4ade80"
             background="#1F2937"
           >

@@ -42,7 +42,7 @@ const Header: React.FC = () => {
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+        <div className="flex items-center justify-between h-12 lg:h-14">
           
           {/* Logo */}
           <div className="flex-shrink-0">
@@ -56,13 +56,13 @@ const Header: React.FC = () => {
               <img 
                 src={imageUrls.logo}
                 alt="The Avocado Table"
-                className="h-10 w-auto lg:h-12"
+                className="h-7 w-auto lg:h-9"
               />
             </button>
           </div>
 
           {/* Mobile Navigation Buttons - NEW */}
-          <nav className="mobile-nav-buttons lg:hidden flex-grow mx-4">
+          <nav className="mobile-nav-buttons lg:hidden flex-grow mx-2">
             <button 
               onClick={() => scrollToSection('menu-section')}
               className="hover:text-forest-400"
@@ -90,43 +90,43 @@ const Header: React.FC = () => {
           </nav>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-6">
             <button 
               onClick={() => scrollToSection('menu-section')}
-              className="text-white hover:text-forest-400 font-medium transition-colors duration-200"
+              className="text-white hover:text-forest-400 font-medium transition-colors duration-200 text-sm"
               style={{ 
                 textShadow: isScrolled ? 'none' : '2px 2px 4px rgba(0, 0, 0, 0.9)',
-                fontWeight: '600'
+                fontWeight: '500'
               }}
             >
               Menu
             </button>
             <button 
               onClick={() => scrollToSection('about-section')}
-              className="text-white hover:text-forest-400 font-medium transition-colors duration-200"
+              className="text-white hover:text-forest-400 font-medium transition-colors duration-200 text-sm"
               style={{ 
                 textShadow: isScrolled ? 'none' : '2px 2px 4px rgba(0, 0, 0, 0.9)',
-                fontWeight: '600'
+                fontWeight: '500'
               }}
             >
               About
             </button>
             <button 
               onClick={() => scrollToSection('reviews-section')}
-              className="text-white hover:text-forest-400 font-medium transition-colors duration-200"
+              className="text-white hover:text-forest-400 font-medium transition-colors duration-200 text-sm"
               style={{ 
                 textShadow: isScrolled ? 'none' : '2px 2px 4px rgba(0, 0, 0, 0.9)',
-                fontWeight: '600'
+                fontWeight: '500'
               }}
             >
               Reviews
             </button>
             <button 
               onClick={() => scrollToSection('contact-section')}
-              className="text-white hover:text-forest-400 font-medium transition-colors duration-200"
+              className="text-white hover:text-forest-400 font-medium transition-colors duration-200 text-sm"
               style={{ 
                 textShadow: isScrolled ? 'none' : '2px 2px 4px rgba(0, 0, 0, 0.9)',
-                fontWeight: '600'
+                fontWeight: '500'
               }}
             >
               Contact
@@ -137,9 +137,9 @@ const Header: React.FC = () => {
           <div className="hidden lg:flex items-center">
             <button
               onClick={openOrderModal}
-              className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold px-6 py-3 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center space-x-2"
+              className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold px-4 py-2 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center space-x-2 text-sm"
             >
-              <ShoppingCart className="w-5 h-5" />
+              <ShoppingCart className="w-4 h-4" />
               <span>ORDER NOW</span>
             </button>
           </div>
@@ -161,36 +161,36 @@ const Header: React.FC = () => {
             <div className="px-2 pt-2 pb-3 space-y-1">
               <button 
                 onClick={() => scrollToSection('menu-section')}
-                className="block w-full text-left px-3 py-2 text-white hover:text-forest-400 font-medium transition-colors duration-200"
+                className="block w-full text-left px-3 py-2 text-white hover:text-forest-400 font-medium transition-colors duration-200 text-sm"
               >
                 Menu
               </button>
               <button 
                 onClick={() => scrollToSection('about-section')}
-                className="block w-full text-left px-3 py-2 text-white hover:text-forest-400 font-medium transition-colors duration-200"
+                className="block w-full text-left px-3 py-2 text-white hover:text-forest-400 font-medium transition-colors duration-200 text-sm"
               >
                 About
               </button>
               <button 
                 onClick={() => scrollToSection('reviews-section')}
-                className="block w-full text-left px-3 py-2 text-white hover:text-forest-400 font-medium transition-colors duration-200"
+                className="block w-full text-left px-3 py-2 text-white hover:text-forest-400 font-medium transition-colors duration-200 text-sm"
               >
                 Reviews
               </button>
               <button 
                 onClick={() => scrollToSection('contact-section')}
-                className="block w-full text-left px-3 py-2 text-white hover:text-forest-400 font-medium transition-colors duration-200"
+                className="block w-full text-left px-3 py-2 text-white hover:text-forest-400 font-medium transition-colors duration-200 text-sm"
               >
                 Contact
               </button>
               
               {/* Mobile Order Button */}
-              <div className="px-3 py-2 mt-2" style={{ border: 'none', boxShadow: 'none' }}>
+              <div className="px-3 py-1 mt-1" style={{ border: 'none', boxShadow: 'none' }}>
                 <button
                   onClick={openOrderModal}
-                  className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold px-4 py-3 rounded-full shadow-lg flex items-center justify-center space-x-2 transition-all duration-300"
+                  className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold px-4 py-2 rounded-full shadow-lg flex items-center justify-center space-x-2 transition-all duration-300 text-sm"
                 >
-                  <ShoppingCart className="w-5 h-5" />
+                  <ShoppingCart className="w-4 h-4" />
                   <span>ORDER NOW</span>
                 </button>
               </div>

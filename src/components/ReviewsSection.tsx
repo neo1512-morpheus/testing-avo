@@ -161,22 +161,22 @@ const ReviewsSection: React.FC = () => {
   return (
     <section 
       ref={sectionRef}
-      className={`py-16 md:py-24 w-full transition-all duration-1000 ${
+      className={`py-10 md:py-16 w-full transition-all duration-1000 ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center mb-12 md:mb-16">
+        <div className="text-center mb-8 md:mb-12">
           <h2 
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4"
+            className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3"
             style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)' }}
           >
             What Our <span className="text-forest-400">Customers Say</span>
           </h2>
           <p 
-            className="text-xl text-gray-300 max-w-2xl mx-auto"
+            className="text-base text-gray-300 max-w-xl mx-auto"
             style={{ textShadow: '1px 1px 2px rgba(0, 0, 0, 0.8)' }}
           >
             Join thousands of satisfied customers who love our fresh, healthy avocado dishes
@@ -184,21 +184,21 @@ const ReviewsSection: React.FC = () => {
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
           {stats.map((stat, index) => (
             <div 
               key={index}
-              className="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white border-opacity-20 hover:bg-opacity-20 transition-all duration-300"
+              className="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-4 text-center border border-white border-opacity-20 hover:bg-opacity-20 transition-all duration-300"
             >
-              <stat.icon className="w-8 h-8 text-forest-400 mx-auto mb-3" />
+              <stat.icon className="w-6 h-6 text-forest-400 mx-auto mb-2" />
               <div 
-                className="text-2xl md:text-3xl font-bold text-white mb-1"
+                className="text-lg md:text-xl font-bold text-white mb-1"
                 style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)' }}
               >
                 {stat.value}
               </div>
               <div 
-                className="text-sm text-gray-300"
+                className="text-xs text-gray-300"
                 style={{ textShadow: '1px 1px 2px rgba(0, 0, 0, 0.8)' }}
               >
                 {stat.label}
@@ -209,47 +209,47 @@ const ReviewsSection: React.FC = () => {
 
         {/* Reviews Carousel */}
         <div className="relative max-w-4xl mx-auto">
-          <div className="bg-white bg-opacity-95 rounded-3xl p-8 md:p-12 shadow-2xl">
+          <div className="bg-white bg-opacity-95 rounded-2xl p-6 md:p-8 shadow-2xl">
             
             {/* Navigation Arrows */}
             <button
               onClick={prevReview}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-forest-500 hover:bg-forest-600 text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-10"
+              className="absolute left-3 top-1/2 transform -translate-y-1/2 bg-forest-500 hover:bg-forest-600 text-white p-2 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-10"
             >
-              <ChevronLeft className="w-6 h-6" />
+              <ChevronLeft className="w-4 h-4" />
             </button>
             
             <button
               onClick={nextReview}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-forest-500 hover:bg-forest-600 text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-10"
+              className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-forest-500 hover:bg-forest-600 text-white p-2 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-10"
             >
-              <ChevronRight className="w-6 h-6" />
+              <ChevronRight className="w-4 h-4" />
             </button>
 
             {/* Review Content */}
             <div className="text-center">
               {/* Stars */}
-              <div className="flex justify-center mb-6">
+              <div className="flex justify-center mb-4">
                 {renderStars(reviews[currentReview].rating)}
               </div>
 
               {/* Review Text */}
-              <blockquote className="text-xl md:text-2xl text-gray-800 font-medium leading-relaxed mb-8 min-h-[120px] flex items-center justify-center">
+              <blockquote className="text-base md:text-lg text-gray-800 font-medium leading-relaxed mb-6 min-h-[80px] flex items-center justify-center">
                 "{reviews[currentReview].text}"
               </blockquote>
 
               {/* Author Info */}
-              <div className="flex items-center justify-center space-x-4">
+              <div className="flex items-center justify-center space-x-3">
                 <img
                   src={reviews[currentReview].avatar}
                   alt={reviews[currentReview].author}
-                  className="w-16 h-16 rounded-full object-cover border-4 border-forest-200"
+                  className="w-12 h-12 rounded-full object-cover border-2 border-forest-200"
                 />
                 <div className="text-left">
-                  <div className="font-semibold text-gray-800 text-lg">
+                  <div className="font-semibold text-gray-800 text-sm">
                     {reviews[currentReview].author}
                   </div>
-                  <div className="text-gray-600">
+                  <div className="text-gray-600 text-xs">
                     {reviews[currentReview].location}
                   </div>
                 </div>
@@ -258,12 +258,12 @@ const ReviewsSection: React.FC = () => {
           </div>
 
           {/* Dots Indicator */}
-          <div className="flex justify-center mt-8 space-x-2">
+          <div className="flex justify-center mt-6 space-x-2">
             {reviews.map((_, index) => (
               <button
                 key={index}
                 onClick={() => goToReview(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
                   index === currentReview 
                     ? 'bg-forest-400 scale-125' 
                     : 'bg-white bg-opacity-50 hover:bg-opacity-75'

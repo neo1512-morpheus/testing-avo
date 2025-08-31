@@ -70,14 +70,14 @@ const InstagramSection: React.FC = () => {
   return (
     <section 
       ref={sectionRef} 
-      className={`py-16 md:py-24 w-full transition-all duration-1000 ${
+      className={`py-10 md:py-16 w-full transition-all duration-1000 ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 md:mb-16">
+        <div className="text-center mb-8 md:mb-12">
           <h2 
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4"
+            className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3"
             style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)' }}
           >
             Follow the Freshness: <span className="text-forest-400">#TheAvocadoTable</span>
@@ -87,15 +87,15 @@ const InstagramSection: React.FC = () => {
             href="https://www.instagram.com/_the_avocado_table/" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-flex items-center text-lg text-forest-400 hover:text-forest-300 font-medium transition-colors duration-300"
+            className="inline-flex items-center text-base text-forest-400 hover:text-forest-300 font-medium transition-colors duration-300"
             style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)' }}
           >
-            <Instagram className="w-6 h-6 mr-2" />
+            <Instagram className="w-5 h-5 mr-2" />
             @_the_avocado_table
           </a>
         </div>
         
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
           {instagramPosts.map((post, index) => (
             <div
               key={index}
@@ -132,12 +132,12 @@ const InstagramSection: React.FC = () => {
           ))}
         </div>
         
-        <div className="text-center mt-8">
+        <div className="text-center mt-6">
           <a 
             href="https://www.instagram.com/_the_avocado_table/" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-block bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold px-8 py-3 rounded-full hover:from-purple-600 hover:to-pink-600 transform hover:scale-105 transition-all duration-300"
+            className="inline-block bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold px-6 py-2 rounded-full hover:from-purple-600 hover:to-pink-600 transform hover:scale-105 transition-all duration-300 text-sm"
           >
             Follow Us on Instagram
           </a>

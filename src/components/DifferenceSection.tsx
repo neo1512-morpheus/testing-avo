@@ -66,32 +66,32 @@ const DifferenceSection: React.FC = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="py-12 md:py-16 w-full compact-section">
+    <section ref={sectionRef} className="py-8 md:py-12 w-full compact-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 md:mb-16">
+        <div className="text-center mb-8 md:mb-12">
           <h2 
-            className="difference-title text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 opacity-0"
+            className="difference-title text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 opacity-0"
             style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)' }}
           >
             The <span className="text-forest-400">Avocado Table</span> Difference
           </h2>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 compact-grid-gap">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 compact-grid-gap">
           {features.map((feature, index) => (
             <div 
               key={index}
-              className="difference-item opacity-0 text-center bg-white bg-opacity-95 p-6 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-104 hover:shadow-[0_0_25px_rgba(52,211,153,0.5)] md:hover:scale-104 md:hover:shadow-[0_0_25px_rgba(52,211,153,0.5)]"
+              className="difference-item opacity-0 text-center bg-white bg-opacity-95 p-4 rounded-xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-104 hover:shadow-[0_0_25px_rgba(52,211,153,0.5)] md:hover:scale-104 md:hover:shadow-[0_0_25px_rgba(52,211,153,0.5)]"
             >
-              <div className="text-forest-500 mb-4 flex justify-center">
+              <div className="text-forest-500 mb-3 flex justify-center">
                 {feature.icon}
               </div>
               
-              <h3 className="text-xl md:text-2xl font-semibold text-gray-800 mb-3">
+              <h3 className="text-lg md:text-xl font-semibold text-gray-800 mb-2">
                 {feature.title}
               </h3>
               
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed text-sm">
                 {feature.description}
               </p>
             </div>

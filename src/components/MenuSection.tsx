@@ -72,11 +72,11 @@ const MenuSection: React.FC = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="py-12 md:py-16 w-full compact-section">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 md:mb-16">
+    <section ref={sectionRef} className="py-8 md:py-12 w-full compact-section">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-8 md:mb-12">
           <h2 
-            className="menu-title text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 opacity-0"
+            className="menu-title text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 opacity-0"
             style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)' }}
           >
             Explore Our <span className="text-forest-400">Signature Creations</span>
@@ -102,9 +102,9 @@ const MenuSection: React.FC = () => {
         </div>
         
         {/* Additional CTA */}
-        <div className="text-center mt-12">
+        <div className="text-center mt-8">
           <p 
-            className="text-orange-400 font-bold text-lg mb-4"
+            className="text-orange-400 font-bold text-base mb-3"
             style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)' }}
           >
             🔥 Only 50 orders available daily - Order now!
