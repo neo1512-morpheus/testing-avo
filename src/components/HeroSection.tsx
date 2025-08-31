@@ -141,8 +141,7 @@ const HeroSection: React.FC = () => {
         <div className="absolute inset-0 pointer-events-none z-20 hidden lg:block">
           {/* Left Card - Always Fresh */}
           <div 
-            className="floating-card-left absolute left-4 md:left-6 lg:left-12 top-1/2 transform -translate-y-1/2"
-            style={{
+className="floating-card-left absolute left-8 md:left-12 lg:left-20 top-1/2 transform -translate-y-1/2"            style={{
               background: 'rgba(10, 10, 10, 0.6)',
               backdropFilter: 'blur(8px)',
               border: '1px solid rgba(255, 255, 255, 0.1)',
