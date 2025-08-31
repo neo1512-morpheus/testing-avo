@@ -259,7 +259,7 @@ const HeroSection: React.FC = () => {
                   letterSpacing: '0em',
 textShadow: `2px 2px 4px rgba(0, 0, 0, 0.8)`,
 
-                  animation: 'neon-pulse 2s ease-in-out infinite alternate'
+                  animation: 'pulse 2s ease-in-out infinite alternate'
                 }}
               >
                 AVOCADO
