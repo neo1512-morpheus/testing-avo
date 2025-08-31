@@ -207,7 +207,7 @@ className="floating-card-right absolute right-8 md:right-12 lg:right-20 top-1/2 
             justifyContent: 'flex-start',
             alignItems: 'center',
             height: '100%',
-            paddingTop: '0.5rem' /* pull content further up */
+            paddingTop: '4rem' /* pull content further up */
           }}
         >
           
