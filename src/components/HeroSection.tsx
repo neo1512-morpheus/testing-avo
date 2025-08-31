@@ -170,8 +170,7 @@ className="floating-card-left absolute left-8 md:left-12 lg:left-20 top-1/2 tran
 
           {/* Right Card - Nutrient Packed */}
           <div 
-            className="floating-card-right absolute right-4 md:right-6 lg:right-12 top-1/2 transform -translate-y-1/2"
-            style={{
+className="floating-card-right absolute right-8 md:right-12 lg:right-20 top-1/2 transform -translate-y-1/2"            style={{
               background: 'rgba(10, 10, 10, 0.6)',
               backdropFilter: 'blur(8px)',
               border: '1px solid rgba(255, 255, 255, 0.1)',
