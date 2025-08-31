@@ -256,15 +256,11 @@ const HeroSection: React.FC = () => {
                 style={{
                   color: '#34D399',
                   fontWeight: '900',
-                  fontSize: '1.1em', // Make AVOCADO even bigger
-                  letterSpacing: '-0.01em',
-                  textShadow: `
-                    0 0 5px #34D399,
-                    0 0 10px #34D399,
-                    0 0 20px rgba(16, 185, 129, 0.8),
-                    0 0 30px rgba(16, 185, 129, 0.6),
-                    3px 3px 6px rgba(0, 0, 0, 0.9)
-                  `,
+                  letterSpacing: '0em',
+textShadow: `
+  0 0 8px #34D399,
+  2px 2px 4px rgba(0, 0, 0, 0.8)
+`,
                   animation: 'neon-pulse 2s ease-in-out infinite alternate, text-glow 3s ease-in-out infinite'
                 }}
               >
