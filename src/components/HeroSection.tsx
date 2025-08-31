@@ -257,10 +257,8 @@ const HeroSection: React.FC = () => {
                   color: '#34D399',
                   fontWeight: '900',
                   letterSpacing: '0em',
-textShadow: `
-  0 0 8px #34D399,
-  2px 2px 4px rgba(0, 0, 0, 0.8)
-`,
+textShadow: `2px 2px 4px rgba(0, 0, 0, 0.8)`,
+
                   animation: 'neon-pulse 2s ease-in-out infinite alternate, text-glow 3s ease-in-out infinite'
                 }}
               >
